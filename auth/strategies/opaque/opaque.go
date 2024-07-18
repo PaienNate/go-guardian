@@ -19,8 +19,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/token"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/token"
 )
 
 // SecretsKeeper hold all secrets/keys to sign and parse opaque token.

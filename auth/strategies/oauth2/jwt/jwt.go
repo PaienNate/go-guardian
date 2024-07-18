@@ -11,11 +11,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/claims"
-	"github.com/shaj13/go-guardian/v2/auth/internal/jwt"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/oauth2"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/token"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/claims"
+	"github.com/PaienNate/go-guardian/v2/auth/internal/jwt"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/oauth2"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/token"
 )
 
 var (
@@ -44,9 +44,8 @@ func GetAuthenticateFunc(addr string, opts ...auth.Option) token.AuthenticateFun
 //
 // New is similar to:
 //
-// 		fn := jwt.GetAuthenticateFunc(addr, opts...)
-// 		token.New(fn, cache, opts...)
-//
+//	fn := jwt.GetAuthenticateFunc(addr, opts...)
+//	token.New(fn, cache, opts...)
 func New(addr string, c auth.Cache, opts ...auth.Option) auth.Strategy {
 	fn := GetAuthenticateFunc(addr, opts...)
 	return token.New(fn, c, opts...)

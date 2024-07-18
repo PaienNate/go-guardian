@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/basic"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/basic"
 
 	"github.com/go-ldap/ldap/v3"
 )
@@ -24,7 +24,7 @@ type conn interface {
 	Search(searchRequest *ldap.SearchRequest) (*ldap.SearchResult, error)
 	StartTLS(config *tls.Config) error
 	UnauthenticatedBind(username string) error
-	Close()
+	Close() error
 }
 
 // Config define the configuration to connect to LDAP.
@@ -67,8 +67,11 @@ func dial(cfg *Config) (conn, error) {
 	if cfg.URL == "" {
 		cfg.URL = fmt.Sprintf("%s://%s:%s", scheme, cfg.Host, cfg.Port)
 	}
-
-	return ldap.DialURL(cfg.URL, opts...)
+	url, err := ldap.DialURL(cfg.URL, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return url, nil
 }
 
 type client struct {

@@ -1,4 +1,4 @@
-//nolint: lll
+// nolint: lll
 package kubernetes
 
 import (
@@ -10,7 +10,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/shaj13/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth"
 )
 
 func TestNewKubeReview(t *testing.T) {

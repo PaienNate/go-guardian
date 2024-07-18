@@ -1,4 +1,4 @@
-//nolint: lll
+// nolint: lll
 package digest
 
 import (
@@ -10,7 +10,7 @@ import (
 	_ "github.com/shaj13/libcache/lru"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/shaj13/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth"
 )
 
 func TestStartegy(t *testing.T) {

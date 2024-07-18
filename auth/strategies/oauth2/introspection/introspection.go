@@ -12,11 +12,11 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/claims"
-	"github.com/shaj13/go-guardian/v2/auth/internal"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/oauth2"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/token"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/claims"
+	"github.com/PaienNate/go-guardian/v2/auth/internal"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/oauth2"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/token"
 )
 
 // GetAuthenticateFunc return function to authenticate request using oauth2 token introspection endpoint.
@@ -30,9 +30,8 @@ func GetAuthenticateFunc(addr string, opts ...auth.Option) token.AuthenticateFun
 //
 // New is similar to:
 //
-// 		fn := introspection.GetAuthenticateFunc(addr, opts...)
-// 		token.New(fn, cache, opts...)
-//
+//	fn := introspection.GetAuthenticateFunc(addr, opts...)
+//	token.New(fn, cache, opts...)
 func New(addr string, c auth.Cache, opts ...auth.Option) auth.Strategy {
 	fn := GetAuthenticateFunc(addr, opts...)
 	return token.New(fn, c, opts...)

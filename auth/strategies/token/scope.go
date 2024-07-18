@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/shaj13/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth"
 )
 
 const scopesExtName = "x-go-guardian-scopes"
@@ -24,8 +24,7 @@ type Scope interface {
 // WithNamedScopes add all the provided named scopes to the provided auth.info.
 // Typically used when token scopes verification enabled and need to add token scopes to the auth info.
 //
-// 		token.WithNamedScopes(info, "read:repo", "read:user")
-//
+//	token.WithNamedScopes(info, "read:repo", "read:user")
 func WithNamedScopes(info auth.Info, scopes ...string) {
 	ext := auth.Extensions{}
 
@@ -57,9 +56,8 @@ func GetNamedScopes(info auth.Info) (scopes []string) {
 //
 // Example:
 //
-// 		token.NewScope("admin.write","/admin|/system","POST|PUT")
-// 		token.NewScope("read:repo","/repo","GET")
-//
+//	token.NewScope("admin.write","/admin|/system","POST|PUT")
+//	token.NewScope("read:repo","/repo","GET")
 func NewScope(name, endpoint, method string) Scope {
 	return defaultScope{
 		name:     name,

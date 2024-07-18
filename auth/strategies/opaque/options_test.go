@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/shaj13/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth"
 )
 
 func TestOptions(t *testing.T) {

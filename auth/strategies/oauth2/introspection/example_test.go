@@ -9,11 +9,11 @@ import (
 	"github.com/shaj13/libcache"
 	_ "github.com/shaj13/libcache/lru"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/claims"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/oauth2"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/oauth2/introspection"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/token"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/claims"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/oauth2"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/oauth2/introspection"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/token"
 )
 
 type ExampleClaims struct {

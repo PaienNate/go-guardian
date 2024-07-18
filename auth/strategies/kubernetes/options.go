@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/internal"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/internal"
 )
 
 // SetServiceAccountToken sets kubernetes service account token

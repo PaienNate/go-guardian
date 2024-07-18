@@ -4,7 +4,7 @@ import (
 	"crypto"
 	"time"
 
-	"github.com/shaj13/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth"
 )
 
 // WithTokenLength is the size of tokens to generate.

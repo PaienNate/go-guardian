@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/shaj13/go-guardian/v2/auth"
-	"github.com/shaj13/go-guardian/v2/auth/strategies/token"
+	"github.com/PaienNate/go-guardian/v2/auth"
+	"github.com/PaienNate/go-guardian/v2/auth/strategies/token"
 )
 
 // GetAuthenticateFunc return function to authenticate request using jwt token.
@@ -33,9 +33,8 @@ func GetAuthenticateFunc(s SecretsKeeper, opts ...auth.Option) token.Authenticat
 //
 // New is similar to:
 //
-// 		fn := jwt.GetAuthenticateFunc(secretsKeeper, opts...)
-// 		token.New(fn, cache, opts...)
-//
+//	fn := jwt.GetAuthenticateFunc(secretsKeeper, opts...)
+//	token.New(fn, cache, opts...)
 func New(c auth.Cache, s SecretsKeeper, opts ...auth.Option) auth.Strategy {
 	fn := GetAuthenticateFunc(s, opts...)
 	return token.New(fn, c, opts...)
